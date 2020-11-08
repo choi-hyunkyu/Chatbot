@@ -1,5 +1,5 @@
 '''
-Data Preprocessing part
+전처리
 '''
 corpus_name = "normal chatbot data"
 PATH = './data/normal chatbot data/'
@@ -9,7 +9,7 @@ MAX_LENGTH = 20  # 고려할 문장의 최대 길이
 MIN_COUNT = 3    # 제외할 단어의 기준이 되는 등장 횟수
 
 '''
-Network part
+모델
 '''
 # 기본 단어 토큰 값
 PAD_token = 0  # 짧은 문장을 채울(패딩, PADding) 때 사용할 제로 토큰
@@ -27,7 +27,7 @@ decoder_n_layers = 2
 dropout = 0.1
 
 '''
-Train part
+학습
 '''
 batch_size = 64
 # 불러올 checkpoint를 설정합니다. 처음부터 시작할 때는 None으로 둡니다.
@@ -45,11 +45,3 @@ decoder_learning_ratio = 5.0
 n_iteration = 5000
 print_every = 1
 save_every = 500
-
-'''
-evaluation
-
-pretrained_model_PATH = './data/save/' + model_name + '/' + corpus_name + '/' + str(encoder_n_layers) + '-' + str(decoder_n_layers) + '_' + str(hidden_size) + '/'
-model_checkpoint = '5000' + '_' + 'checkpoint_v1' + '.tar'
-model_PATH = pretrained_model_PATH + model_checkpoint
-'''
