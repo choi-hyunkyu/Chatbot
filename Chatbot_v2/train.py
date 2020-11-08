@@ -9,13 +9,13 @@ import torch
 import torch.optim as optim
 
 '''
-gpu
+gpu setting
 '''
 device = UseGPU()
 
 
 '''
-데이터 로딩
+data loading
 '''
 corpus_name = corpus_name
 corpus = os.path.join("data", corpus_name)
@@ -24,13 +24,13 @@ datafile = os.path.join(corpus, textfilename)
 
 
 '''
-데이터 형태
+data shape
 '''
 # printLines(os.path.join(corpus, textfilename))
 
 
 '''
-빈도수 낮은 단어 제거
+data reshaping
 '''
 save_dir = os.path.join("data", "save")
 voc, pairs = loadPrepareData(corpus, corpus_name, datafile, save_dir, Voc)
@@ -38,8 +38,16 @@ pairs = trimRareWords(voc, pairs, MIN_COUNT)
 
 
 '''
-학습 세팅
+train setting
 '''
+# 불러올 checkpoint를 설정합니다. 처음부터 시작할 때는 None으로 둡니다.
+loadFilename = None
+
+# 학습을 이어서 진행할 경우
+#loadFilename = os.path.join(save_dir, model_name, corpus_name,
+#                            '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
+#                            '{}_checkpoint.tar'.format(checkpoint_iter))
+
 # loadFilename이 제공되는 경우에는 모델을 불러옵니다
 if loadFilename:
     # 모델을 학습할 때와 같은 기기에서 불러오는 경우
@@ -57,14 +65,18 @@ if loadFilename:
 print('Building encoder and decoder ...')
 # 단어 임베딩을 초기화합니다
 embedding = nn.Embedding(voc.num_words, hidden_size)
+
 if loadFilename:
     embedding.load_state_dict(embedding_sd)
+
 # 인코더 및 디코더 모델을 초기화합니다
 encoder = EncoderRNN(hidden_size, embedding, encoder_n_layers, dropout)
 decoder = LuongAttnDecoderRNN(attn_model, embedding, hidden_size, voc.num_words, decoder_n_layers, dropout)
+
 if loadFilename:
     encoder.load_state_dict(encoder_sd)
     decoder.load_state_dict(decoder_sd)
+
 # 적절한 디바이스를 사용합니다
 encoder = encoder.to(device)
 decoder = decoder.to(device)
@@ -72,7 +84,7 @@ print('Models built and ready to go!')
 
 
 '''
-학습
+train
 '''
 # Dropout 레이어를 학습 모드로 둡니다
 encoder.train()
