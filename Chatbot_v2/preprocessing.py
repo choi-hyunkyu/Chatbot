@@ -86,7 +86,6 @@ def trimRareWords(voc, pairs, MIN_COUNT):
     print("Trimmed from {} pairs to {}, {:.4f} of total".format(len(pairs), len(keep_pairs), len(keep_pairs) / len(pairs)))
     return keep_pairs
 
-
 def indexesFromSentence(voc, sentence):
     return [voc.word2index[word] for word in sentence.split(' ')] + [EOS_token]
 
