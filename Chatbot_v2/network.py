@@ -51,7 +51,8 @@ class Voc:
         for word in keep_words:
             self.addWord(word)
 
-
+            
+            
 class EncoderRNN(nn.Module):
     def __init__(self, hidden_size, embedding, n_layers=1, dropout=0):
         super(EncoderRNN, self).__init__()
@@ -79,7 +80,8 @@ class EncoderRNN(nn.Module):
         # 출력과 마지막 은닉 상태를 반환합니다
         return outputs, hidden
 
-
+    
+    
 # Luong 어텐션 레이어
 class Attn(nn.Module):
     def __init__(self, method, hidden_size):
