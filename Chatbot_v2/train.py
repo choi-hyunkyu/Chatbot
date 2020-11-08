@@ -9,13 +9,13 @@ import torch
 import torch.optim as optim
 
 '''
-gpu setting
+gpu
 '''
 device = UseGPU()
 
 
 '''
-data loading
+데이터 로딩
 '''
 corpus_name = corpus_name
 corpus = os.path.join("data", corpus_name)
@@ -24,13 +24,13 @@ datafile = os.path.join(corpus, textfilename)
 
 
 '''
-data shape
+데이터 형태
 '''
 # printLines(os.path.join(corpus, textfilename))
 
 
 '''
-data reshaping
+빈도수 낮은 단어 제거
 '''
 save_dir = os.path.join("data", "save")
 voc, pairs = loadPrepareData(corpus, corpus_name, datafile, save_dir, Voc)
@@ -38,7 +38,7 @@ pairs = trimRareWords(voc, pairs, MIN_COUNT)
 
 
 '''
-train setting
+학습 세팅
 '''
 # loadFilename이 제공되는 경우에는 모델을 불러옵니다
 if loadFilename:
@@ -72,7 +72,7 @@ print('Models built and ready to go!')
 
 
 '''
-train
+학습
 '''
 # Dropout 레이어를 학습 모드로 둡니다
 encoder.train()
