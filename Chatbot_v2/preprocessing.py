@@ -1,5 +1,6 @@
 from network import *
 from hparams import *
+from konlpy.tag import Komoran; tokenizer = Komoran()
 
 import re
 import unicodedata
@@ -38,7 +39,7 @@ def readVocs(datafile, corpus_name, Voc):
 # 문장의 쌍 'p'에 포함된 두 문장이 모두 MAX_LENGTH라는 기준보다 짧은지를 반환합니다
 def filterPair(p):
     # EOS 토큰을 위해 입력 시퀀스의 마지막 단어를 보존해야 합니다
-    return len(p[0].split(' ')) < MAX_LENGTH and len(p[1].split(' ')) < MAX_LENGTH
+    return len(tokenizer.morphs(p[0])) < MAX_LENGTH and len(tokenizer.morphs(p[1])) < MAX_LENGTH
 
 # 조건식 filterPair에 따라 pairs를 필터링합니다
 def filterPairs(pairs):
@@ -68,13 +69,13 @@ def trimRareWords(voc, pairs, MIN_COUNT):
         output_sentence = pair[1]
         keep_input = True
         keep_output = True
-        # 입력 문장을 검사합니다
-        for word in input_sentence.split(' '):
+        # 입력 문장을 F검사합니다
+        for word in tokenizer.morphs(input_sentence):
             if word not in voc.word2index:
                 keep_input = False
                 break
         # 출력 문장을 검사합니다
-        for word in output_sentence.split(' '):
+        for word in tokenizer.morphs(output_sentence):
             if word not in voc.word2index:
                 keep_output = False
                 break
@@ -86,8 +87,9 @@ def trimRareWords(voc, pairs, MIN_COUNT):
     print("Trimmed from {} pairs to {}, {:.4f} of total".format(len(pairs), len(keep_pairs), len(keep_pairs) / len(pairs)))
     return keep_pairs
 
+
 def indexesFromSentence(voc, sentence):
-    return [voc.word2index[word] for word in sentence.split(' ')] + [EOS_token]
+    return [voc.word2index[word] for word in okt.morphs(sentence)] + [EOS_token]
 
 def zeroPadding(l, fillvalue=PAD_token):
     return list(itertools.zip_longest(*l, fillvalue=fillvalue))
