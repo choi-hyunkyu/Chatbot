@@ -70,7 +70,7 @@ class EncoderRNN(nn.Module):
         # 단어 인덱스를 임베딩으로 변환합니다
         embedded = self.embedding(input_seq)
         # RNN 모듈을 위한 패딩된 배치 시퀀스를 패킹합니다
-        packed = nn.utils.rnn.pack_padded_sequence(embedded, input_lengths)
+        packed = nn.utils.rnn.pack_padded_sequence(embedded, input_lengths, enforce_sorted=False)
         # GRU로 포워드 패스를 수행합니다
         outputs, hidden = self.gru(packed, hidden)
         # 패딩을 언패킹합니다
