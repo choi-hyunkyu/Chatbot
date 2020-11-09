@@ -1,4 +1,5 @@
 from hparams import *
+from konlpy.tag import Komoran; tokenizer = Komoran()
 
 import torch
 import torch.nn as nn
@@ -14,7 +15,7 @@ class Voc:
         self.num_words = 3  # SOS, EOS, PAD를 센 것
 
     def addSentence(self, sentence):
-        for word in sentence.split(' '):
+        for word in tokenizer.morphs(sentence):
             self.addWord(word)
 
     def addWord(self, word):
@@ -51,8 +52,7 @@ class Voc:
         for word in keep_words:
             self.addWord(word)
 
-            
-            
+
 class EncoderRNN(nn.Module):
     def __init__(self, hidden_size, embedding, n_layers=1, dropout=0):
         super(EncoderRNN, self).__init__()
@@ -80,8 +80,7 @@ class EncoderRNN(nn.Module):
         # 출력과 마지막 은닉 상태를 반환합니다
         return outputs, hidden
 
-    
-    
+
 # Luong 어텐션 레이어
 class Attn(nn.Module):
     def __init__(self, method, hidden_size):
