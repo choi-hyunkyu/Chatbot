@@ -89,7 +89,7 @@ def trimRareWords(voc, pairs, MIN_COUNT):
 
 
 def indexesFromSentence(voc, sentence):
-    return [voc.word2index[word] for word in okt.morphs(sentence)] + [EOS_token]
+    return [voc.word2index[word] for word in sentence.split(' ')] + [EOS_token]
 
 def zeroPadding(l, fillvalue=PAD_token):
     return list(itertools.zip_longest(*l, fillvalue=fillvalue))
