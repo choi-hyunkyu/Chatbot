@@ -1,6 +1,5 @@
 from network import *
 from hparams import *
-from konlpy.tag import Komoran; tokenizer = Komoran()
 
 import re
 import unicodedata
@@ -39,7 +38,7 @@ def readVocs(datafile, corpus_name, Voc):
 # 문장의 쌍 'p'에 포함된 두 문장이 모두 MAX_LENGTH라는 기준보다 짧은지를 반환합니다
 def filterPair(p):
     # EOS 토큰을 위해 입력 시퀀스의 마지막 단어를 보존해야 합니다
-    return len(tokenizer.morphs(p[0])) < MAX_LENGTH and len(tokenizer.morphs(p[1])) < MAX_LENGTH
+    return len(p[0].split(' ')) < MAX_LENGTH and len(p[1].split(' ')) < MAX_LENGTH
 
 # 조건식 filterPair에 따라 pairs를 필터링합니다
 def filterPairs(pairs):
@@ -70,12 +69,12 @@ def trimRareWords(voc, pairs, MIN_COUNT):
         keep_input = True
         keep_output = True
         # 입력 문장을 F검사합니다
-        for word in tokenizer.morphs(input_sentence):
+        for word in input_sentence.split(' '):
             if word not in voc.word2index:
                 keep_input = False
                 break
         # 출력 문장을 검사합니다
-        for word in tokenizer.morphs(output_sentence):
+        for word in output_sentence.split(' '):
             if word not in voc.word2index:
                 keep_output = False
                 break
