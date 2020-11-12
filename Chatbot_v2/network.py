@@ -1,5 +1,4 @@
 from hparams import *
-from konlpy.tag import Komoran; tokenizer = Komoran()
 
 import torch
 import torch.nn as nn
@@ -15,7 +14,7 @@ class Voc:
         self.num_words = 3  # SOS, EOS, PAD를 센 것
 
     def addSentence(self, sentence):
-        for word in tokenizer.morphs(sentence):
+        for word in sentence.split(' '):
             self.addWord(word)
 
     def addWord(self, word):
