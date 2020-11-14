@@ -1,0 +1,111 @@
+# 리눅스 우분투 환경 파이썬 개발환경 구축
+
+'''
+개발자 모드 설정
+'''
+1. 윈도우 검색창에서 '개발자 설정'검색 후 개발자 모드 활성화
+2. 제어판/프로그램/프로그램 및 기능/Windows 기능 켜기끄기/Linux용 Windows 하위 시스템 선택
+3. 컴퓨터 다시 시작
+
+'''
+우분투 기본 세팅
+'''
+1. sudo apt-get update
+2. sudo apt-get upgrade
+3. sudo apt-get dist-upgrade
+4. sudo apt-get install build-essential python-dev python-setuptools python-pip python-smbus
+5. sudo apt-get install libncursesw5-dev libgdbm-dev libc6-dev
+6. sudo apt-get install zlib1g-dev libsqlite3-dev tk-dev
+7. sudo apt-get install libssl-dev openssl
+8. sudo apt-get install libffi-dev
+
+'''
+우분투 가상환경 설치
+'''
+1. pip3 install virtualenv
+2. python3 -m virtualenv venv-python3.8
+3. source /home/choihk/chatbot/bin/activate
+4. deactivate
+
+
+'''
+파이썬 설치
+'''
+1. wget https://www.python.org/ftp/python/3.8.6/Python-3.8.6.tgz
+2. ls 명령어 클릭 후 Python-3.8.6.tgz 파일 확인
+3. tar xvfz Python-3.8.6.tgz
+4. cd 명령어를 통해 Python-3.8.6 폴더 내부로 진입
+5. ls 명령어 클릭 후 configure 파일 확인
+6. ./configure -> make -> sudo make install
+7. Python3 -V
+
+'''
+pip3 설치
+'''
+sudo apt-get install python3-pip
+sudo apt-get install python3-setuptools
+python3.8 -m pip install --upgrade pip
+
+'''
+라이브러리 설치
+'''
+sudo pip3 install numpy
+sudo pip3 install pandas
+sudo pip3 install matplotlib
+
+'''
+설치 확인
+'''
+sudo pip3 list
+
+'''
+파이토치 설치
+'''
+1. CPU: pip3 install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+2. GPU: pip3 install torch torchvision
+
+'''
+KoNLPy 설치
+'''
+1. sudo apt-get install openjdk-8-jdk python3-dev
+2. pip3 install konlpy
+
+'''
+우분투 git 설치
+'''
+1. sudo apt-get install git
+2. git config --global user.name "your account"
+3. git config --global user.email "email@address.com"
+4. git config --global color.ui "auto"
+5. git clone "address"
+
+'''
+우분투 nvidia driver 설치
+'''
+1. sudo add-apt-repository ppa:graphics-drivers/ppa
+2. sudo apt update
+3. sudo ubuntu-drivers autoinstall
+4. sudo reboot
+
+'''
+우분투 mysql 설치
+'''
+1. sudo apt-cache search mysql-server
+2. sudo apt-get install mysql-server-[version]
+3. sudo apt-get install net-tools
+4. netstat -anp | grep 3306
+5. mysql -u root -p
+6. 비밀번호 입력 후 접속 성공 확인
+
+'''
+pip 패키지 관리
+'''
+1. 가상환경 접속
+2. pip3 freeze 목록확인
+3. pip3 freeze > requirements.txt
+
+'''
+requirements.txt 설치 방법
+'''
+1. pip install -r requirements.txt
