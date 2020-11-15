@@ -102,12 +102,12 @@ if loadFilename:
 for state in encoder_optimizer.state.values():
     for k, v in state.items():
         if isinstance(v, torch.Tensor):
-            state[k] = v.cuda()
+            state[k] = v.to(device)
 
 for state in decoder_optimizer.state.values():
     for k, v in state.items():
         if isinstance(v, torch.Tensor):
-            state[k] = v.cuda()
+            state[k] = v.to(device)
     
 # 학습 단계를 수행합니다
 print("Starting Training!")
