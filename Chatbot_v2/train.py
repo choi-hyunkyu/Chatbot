@@ -32,7 +32,6 @@ data shape
 '''
 data reshaping
 '''
-save_dir = os.path.join("data", "save")
 voc, pairs = loadPrepareData(corpus, corpus_name, datafile, save_dir, Voc)
 pairs = trimRareWords(voc, pairs, MIN_COUNT)
 
@@ -41,13 +40,9 @@ pairs = trimRareWords(voc, pairs, MIN_COUNT)
 train setting
 '''
 # 불러올 checkpoint를 설정합니다. 처음부터 시작할 때는 None으로 둡니다.
-loadFilename = None
+#loadFilename = None
 
 # 학습을 이어서 진행할 경우
-#loadFilename = os.path.join(save_dir, model_name, corpus_name,
-#                            '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
-#                            '{}_checkpoint.tar'.format(checkpoint_iter))
-
 # loadFilename이 제공되는 경우에는 모델을 불러옵니다
 if loadFilename:
     # 모델을 학습할 때와 같은 기기에서 불러오는 경우
@@ -113,4 +108,4 @@ for state in decoder_optimizer.state.values():
 print("Starting Training!")
 trainIters(model_name, voc, pairs, encoder, decoder, encoder_optimizer, decoder_optimizer,
            embedding, encoder_n_layers, decoder_n_layers, save_dir, n_iteration, batch_size,
-           print_every, save_every, clip, corpus_name, loadFilename)
+           print_every, save_every, clip, corpus_name, loadFilename, checkpoint)
