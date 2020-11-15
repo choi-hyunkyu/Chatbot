@@ -90,7 +90,7 @@ def train(input_variable, lengths, target_variable, mask, max_target_len, encode
     return sum(print_losses) / n_totals
 
 
-def trainIters(model_name, voc, pairs, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding, encoder_n_layers, decoder_n_layers, save_dir, n_iteration, batch_size, print_every, save_every, clip, corpus_name, loadFilename):
+def trainIters(model_name, voc, pairs, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding, encoder_n_layers, decoder_n_layers, save_dir, n_iteration, batch_size, print_every, save_every, clip, corpus_name, loadFilename, checkpoint):
 
     # 각 단계에 대한 배치를 읽어옵니다
     training_batches = [batch2TrainData(voc, [random.choice(pairs) for _ in range(batch_size)])
