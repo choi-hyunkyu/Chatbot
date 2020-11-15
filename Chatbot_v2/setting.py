@@ -38,7 +38,7 @@ def train(input_variable, lengths, target_variable, mask, max_target_len, encode
     # 인코더로 포워드 패스를 수행합니다
     encoder_outputs, encoder_hidden = encoder(input_variable, lengths)
 
-    # 초기 디코더 입력을 생성합니다(각 문장을 SOS 도큰으로 시작합니다)
+    # 초기 디코더 입력을 생성합니다(각 문장을 SOS 토큰으로 시작합니다)
     decoder_input = torch.LongTensor([[SOS_token for _ in range(batch_size)]])
     decoder_input = decoder_input.to(device)
 
