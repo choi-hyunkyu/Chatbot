@@ -1,5 +1,6 @@
 from network import *
 from hparams import *
+from konlpy.tag import Mecab
 
 import re
 import unicodedata
