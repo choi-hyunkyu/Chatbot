@@ -42,8 +42,9 @@ dropout = 0.1
 Train part
 '''
 batch_size = 64
-loadFilename = None
+# loadFilename = None
 checkpoint_iter = 5000
+loadFilename = os.path.join(save_dir, model_name, corpus_name, '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size), '{}_checkpoint.tar'.format(checkpoint_iter))
 
 # train setting
 clip = 50.0
