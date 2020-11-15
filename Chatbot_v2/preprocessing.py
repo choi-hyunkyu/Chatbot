@@ -68,7 +68,7 @@ def trimRareWords(voc, pairs, MIN_COUNT):
         output_sentence = pair[1]
         keep_input = True
         keep_output = True
-        # 입력 문장을 F검사합니다
+        # 입력 문장을 검사합니다
         for word in input_sentence.split(' '):
             if word not in voc.word2index:
                 keep_input = False
