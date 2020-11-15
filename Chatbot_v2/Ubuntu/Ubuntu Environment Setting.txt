@@ -66,10 +66,49 @@ sudo pip3 list
 2. GPU: pip3 install torch torchvision
 
 '''
-KoNLPy 설치
+우분투 KoNLPy 설치
 '''
 1. sudo apt-get install openjdk-8-jdk python3-dev
 2. pip3 install konlpy
+
+'''
+우분투 KoNLPy Mecab 설치
+'''
+# KoNLPy Mecab 설치 
+# https://blueriver97.tistory.com/27
+# https://bitbucket.org/eunjeon/mecab-ko/downloads/
+
+1. pip3 install konlpy
+2. sudo apt-get install curl
+3. pip3 install JPype1
+4. sudo apt-get install g++ openjdk-8-jdk python-dev python3-dev
+5. bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
+6. pip3 install mecab-python3
+7. git clone https://bitbucket.org/eunjeon/mecab-python-0.996.git
+8. cd mecab-python-0.996/
+
+
+# KoNLPy Mecab 사전 구축
+wget https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-0.996-ko-0.9.2.tar.gz
+tar -zxvf mecab-*-ko-*.tar.gz
+cd mecab-*-ko-*
+./configure
+make
+make check
+sudo make install
+
+wget https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.0.1-20150920.tar.gz
+tar -zxvf mecab-ko-dic-2.0.1-20150920.tar.gz
+cd mecab-ko-dic-2.0.1-20150920/
+./autogen.sh
+./configure
+make
+sudo make install
+
+cd /home/choihk/mecab-python-0.996/
+python3 setup.py build
+python3 setup.py install
+mecab -d /usr/local/lib/mecab/dic/mecab-ko-dic
 
 '''
 우분투 git 설치
