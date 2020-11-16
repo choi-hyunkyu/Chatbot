@@ -128,17 +128,6 @@ pip3 설치
 
 
 '''
-우분투 mysql 설치
-'''
-1. sudo apt-cache search mysql-server
-2. sudo apt-get install mysql-server-[version]
-3. sudo apt-get install net-tools
-4. netstat -anp | grep 3306
-5. mysql -u root -p
-6. 비밀번호 입력 후 접속 성공 확인
-
-
-'''
 우분투 nvidia driver 설치
 '''
 1. nvidia-smi
@@ -158,6 +147,17 @@ pip3 설치
 3. git config --global user.email "email@address.com"
 4. git config --global color.ui "auto"
 5. git clone "address"
+
+
+'''
+우분투 mysql 설치
+'''
+1. sudo apt-cache search mysql-server
+2. sudo apt-get install mysql-server-[version]
+3. sudo apt-get install net-tools
+4. netstat -anp | grep 3306
+5. mysql -u root -p
+6. 비밀번호 입력 후 접속 성공 확인
 
 
 '''
