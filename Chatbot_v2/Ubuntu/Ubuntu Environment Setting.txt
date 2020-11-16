@@ -29,31 +29,36 @@
 
 
 '''
-우분투 가상환경 설치
-'''
-1. pip3 install virtualenv
-2. python3 -m virtualenv venv-python3.8
-3. source /home/choihk/chatbot/bin/activate
-4. deactivate
-
-
-'''
 파이썬 설치
 '''
 1. wget https://www.python.org/ftp/python/3.8.6/Python-3.8.6.tgz
 2. ls 명령어 클릭 후 Python-3.8.6.tgz 파일 확인
 3. tar xvfz Python-3.8.6.tgz
-4. cd 명령어를 통해 Python-3.8.6 폴더 내부로 진입
+4. cd Python-3.8.6
 5. ls 명령어 클릭 후 configure 파일 확인
-6. ./configure -> make -> sudo make install
-7. Python3 -V
+6. ./configure
+7. make
+8. sudo make install
+9. python3 -V
+
+
+'''
+우분투 가상환경 설치
+'''
+1. python3.8 -m pip install --upgrade pip
+2. pip3 install virtualenv
+3. python3 -m virtualenv Chatbot
+4. source /home/choihk/Chatbot/bin/activate
+
+# 가상환경 종료 명령어
+1. deactivate
+
 
 '''
 pip3 설치
 '''
 1. sudo apt-get install python3-pip
 2. sudo apt-get install python3-setuptools
-3. python3.8 -m pip install --upgrade pip
 
 
 '''
@@ -65,16 +70,14 @@ pip3 설치
 
 
 '''
-설치 확인
-'''
-1. sudo pip3 list
-
-'''
 파이토치 설치
 '''
+# CPU
 1. CPU: pip3 install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 
-2. GPU: pip3 install torch torchvision torchtext
+# GPU
+1. GPU: pip3 install torch torchvision torchtext torchaudio
+
 
 '''
 우분투 KoNLPy 설치
@@ -106,7 +109,6 @@ pip3 설치
 5. make
 6. make check
 7. sudo make install
-
 8. wget https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.0.1-20150920.tar.gz
 9. tar -zxvf mecab-ko-dic-2.0.1-20150920.tar.gz
 10. cd mecab-ko-dic-2.0.1-20150920/
@@ -114,7 +116,6 @@ pip3 설치
 12. ./configure
 13. make
 14. sudo make install
-
 15. cd /home/choihk/mecab-python-0.996/
 16. python3 setup.py build
 17. python3 setup.py install
@@ -122,12 +123,9 @@ pip3 설치
 
 
 '''
-우분투 nvidia driver 설치
+설치 확인
 '''
-1. sudo add-apt-repository ppa:graphics-drivers/ppa
-2. sudo apt update
-3. sudo ubuntu-drivers autoinstall
-4. sudo reboot
+1. sudo pip3 list
 
 
 '''
@@ -139,6 +137,15 @@ pip3 설치
 4. netstat -anp | grep 3306
 5. mysql -u root -p
 6. 비밀번호 입력 후 접속 성공 확인
+
+
+'''
+우분투 nvidia driver 설치
+'''
+1. sudo add-apt-repository ppa:graphics-drivers/ppa
+2. sudo apt update
+3. sudo ubuntu-drivers autoinstall
+4. sudo reboot
 
 
 '''
@@ -157,6 +164,7 @@ pip 패키지 관리
 1. 가상환경 접속
 2. pip3 freeze 목록확인
 3. pip3 freeze > requirements.txt
+
 
 '''
 requirements.txt 설치 방법
