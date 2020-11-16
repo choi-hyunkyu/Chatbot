@@ -7,11 +7,6 @@ import unicodedata
 import itertools
 import torch
 
-def printLines(file, n=10):
-    with open(file, 'r', encoding = 'utf-8') as datafile:
-        lines = datafile.readlines()
-    for line in lines[:n]:
-        print(line)
 
 def unicodeToAscii(s):
     return ''.join(
