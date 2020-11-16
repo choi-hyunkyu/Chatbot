@@ -34,7 +34,7 @@ pairs = trimRareWords(voc, pairs, MIN_COUNT)
 train setting
 '''
 # 불러올 checkpoint를 설정합니다. 처음부터 시작할 때는 None으로 둡니다.
-#loadFilename = None
+loadFilename = None
 
 # 학습을 이어서 진행할 경우
 # loadFilename이 제공되는 경우에는 모델을 불러옵니다
