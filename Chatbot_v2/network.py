@@ -123,7 +123,7 @@ class Attn(nn.Module):
 
 
 class LuongAttnDecoderRNN(nn.Module):
-    def __init__(self, attn_model, embedding, hidden_size, output_size, n_layers=1, dropout=0.1):
+    def __init__(self, attn_model, hidden_size, output_size, n_layers=1, dropout=0.1, embedding):
         super(LuongAttnDecoderRNN, self).__init__()
 
         # 참조를 보존해 둡니다
@@ -132,9 +132,9 @@ class LuongAttnDecoderRNN(nn.Module):
         self.output_size = output_size
         self.n_layers = n_layers
         self.dropout = dropout
+        self.embedding = embedding
 
         # 레이어를 정의합니다
-        self.embedding = embedding
         self.embedding_dropout = nn.Dropout(dropout)
         self.gru = nn.GRU(hidden_size, hidden_size, n_layers, dropout=(0 if n_layers == 1 else dropout))
         self.concat = nn.Linear(hidden_size * 2, hidden_size)
