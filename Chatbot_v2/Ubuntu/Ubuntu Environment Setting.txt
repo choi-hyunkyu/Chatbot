@@ -74,17 +74,17 @@ pip3 설치
 파이토치 설치
 '''
 # CPU
-1. CPU: pip3 install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+1. CPU: sudo pip3 install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 # GPU
-1. GPU: pip3 install torch torchvision torchtext torchaudio
+1. GPU: sudo pip3 install torch torchvision torchtext torchaudio
 
 
 '''
 우분투 KoNLPy 설치
 '''
 1. sudo apt-get install openjdk-8-jdk python3-dev
-2. pip3 install konlpy
+2. sudo pip3 install konlpy
 
 
 '''
@@ -93,12 +93,12 @@ pip3 설치
 # KoNLPy Mecab 설치 
 # https://blueriver97.tistory.com/27
 # https://bitbucket.org/eunjeon/mecab-ko/downloads/
-1. pip3 install konlpy
-2. pip3 install JPype1
+1. sudo pip3 install konlpy
+2. sudo pip3 install JPype1
 3. sudo apt-get install curl
 4. sudo apt-get install g++ openjdk-8-jdk python-dev python3-dev
 5. bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
-6. pip3 install mecab-python3
+6. sudo pip3 install mecab-python3
 7. git clone https://bitbucket.org/eunjeon/mecab-python-0.996.git
 8. cd mecab-python-0.996/
 
