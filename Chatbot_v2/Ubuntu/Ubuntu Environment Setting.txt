@@ -70,7 +70,7 @@ sudo pip3 list
 '''
 1. CPU: pip3 install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 
-2. GPU: pip3 install torch torchvision
+2. GPU: pip3 install torch torchvision torchtext
 
 '''
 우분투 KoNLPy 설치
