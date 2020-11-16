@@ -56,13 +56,14 @@ class Voc:
 class EncoderRNN(nn.Module):
     def __init__(self, hidden_size, embedding, n_layers=1, dropout=0):
         super(EncoderRNN, self).__init__()
+        
+        # 참조를 보존해 둡니다.
         self.n_layers = n_layers
         self.hidden_size = hidden_size
         self.embedding = embedding
 
-        # GRU를 초기화합니다. input_size와 hidden_size 패러미터는 둘 다 'hidden_size'로
-        # 둡니다. 이는 우리 입력의 크기가 hideen_size 만큼의 피처를 갖는 단어 임베딩이기
-        # 때문입니다.
+        # GRU를 초기화합니다. input_size와 hidden_size 패러미터는 둘 다 'hidden_size'로 둡니다. 
+        # 이는 우리 입력의 크기가 hideen_size 만큼의 피처를 갖는 단어 임베딩이기 때문입니다.
         self.gru = nn.GRU(hidden_size, hidden_size, n_layers,
                           dropout=(0 if n_layers == 1 else dropout), bidirectional=True)
 
@@ -85,6 +86,8 @@ class EncoderRNN(nn.Module):
 class Attn(nn.Module):
     def __init__(self, method, hidden_size):
         super(Attn, self).__init__()
+        
+        # 메서드를 정의합니다.
         self.method = method
         if self.method not in ['dot', 'general', 'concat']:
             raise ValueError(self.method, "is not an appropriate attention method.")
@@ -153,7 +156,7 @@ class LuongAttnDecoderRNN(nn.Module):
         attn_weights = self.attn(rnn_output, encoder_outputs)
         # 인코더 출력에 어텐션을 곱하여 새로운 "가중치 합" 문백 벡터를 구합니다
         context = attn_weights.bmm(encoder_outputs.transpose(0, 1))
-        # Luong의 논문에 나온 식 5를 이용하여 가중치 문백 벡터와 GRU 출력을 결합합니다
+        # Luong의 논문에 나온 식을 이용하여 가중치 문백 벡터와 GRU 출력을 결합합니다
         rnn_output = rnn_output.squeeze(0)
         context = context.squeeze(1)
         concat_input = torch.cat((rnn_output, context), 1)
