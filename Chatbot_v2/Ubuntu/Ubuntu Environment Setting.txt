@@ -132,13 +132,18 @@ pip3 설치
 우분투 nvidia driver 설치
 '''
 1. nvidia-smi
-2. sudo apt-get install nvidia-driver-390
-3. sudo reboot
+2. sudo add-apt-repository ppa:graphics-drivers/ppa
+3. sudo apt update
+4. sudo apt-get install nvidia-driver-390
+5. sudo reboot
 
 # nvidia drivier 설치 과정에서 충돌 발생 시 삭제 후 재설치
 1. sudo apt --purge autoremove nvidia*
-2. sudo apt-get install nvidia-driver-390
-3. sudo reboot
+2.  sudo add-apt-repository ppa:graphics-drivers/ppa
+3. sudo apt update
+4. sudo apt-get install nvidia-driver-390
+5. sudo reboot
+
 
 '''
 우분투 git 설치
