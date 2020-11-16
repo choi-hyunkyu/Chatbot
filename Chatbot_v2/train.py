@@ -24,12 +24,6 @@ datafile = os.path.join(corpus, textfilename)
 
 
 '''
-data shape
-'''
-# printLines(os.path.join(corpus, textfilename))
-
-
-'''
 data reshaping
 '''
 voc, pairs = loadPrepareData(corpus, corpus_name, datafile, save_dir, Voc)
