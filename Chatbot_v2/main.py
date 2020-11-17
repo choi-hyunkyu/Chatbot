@@ -4,9 +4,6 @@ from setting import *
 
 import os
 
-corpus = os.path.join("data", corpus_name)
-save_dir = os.path.join("data", "save")
-datafile = os.path.join(corpus, after_filename)
 voc, pairs = loadPrepareData(corpus, corpus_name, datafile, save_dir, Voc)
 loadFilename = os.path.join(save_dir, model_name, corpus_name,
                             '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
