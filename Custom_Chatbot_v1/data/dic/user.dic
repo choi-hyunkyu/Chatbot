@@ -1,17 +1,277 @@
+# burger
+맥스파이시 상하이	NNP
+맥스파이시상하이	NNP
+상하이 스파이시	NNP
+상하이스파이시	NNP
 상하이	NNP
 빅맥	NNP
-1955	NNP
+맥치킨	NNP
+맥치킨 모짜렐라	NNP
+맥치킨모짜렐라	NNP
+더블 불고기	NNP
+더블불고기	NNP
+에그 불고기	NNP
+에그불고기	NNP
+불고기	NNP
+슈슈	NNP
+슈비	NNP
+베이컨 토마토 디럭스	NNP
+베이컨토마토 디럭스	NNP
+베이컨 토마토디럭스	NNP
+베이컨토마토디럭스	NNP
+베토디	NNP
+더블 쿼터파운더 치즈	NNP
+더블쿼터파운더 치즈	NNP
+더블쿼터파운더치즈	NNP
+쿼터파운더 치즈	NNP
+쿼터파운더치즈	NNP
+치즈	NNP
+더블 치즈	NNP
+더블치즈	NNP
+햄	NNP
 일구오오	NNP
-더블1955	NNP
+1955	NNP
 더블 1955	NNP
+더블1955	NNP
+1955 해쉬브라운	NNP
+1955해쉬브라운	NNP
 
-음료수	NNP
+# morning
+치킨 치즈 머핀	NNP
+치킨치즈머핀	NNP
+에그 맥머핀 	NNP
+에그맥머핀	NNP
+베이컨 에그 맥머핀	NNP
+베이컨에그 맥머핀	NNP
+베이컨에그맥머핀	NNP
+소시지 에그 맥머핀	NNP
+소시지에그 맥머핀	NNP
+소시지에그맥머핀	NNP
+소세지 에그 맥머핀	NNP
+소세지에그 맥머핀	NNP
+소세지에그맥머핀	NNP
+베이컨 토마토 머핀	NNP
+베이컨토마토 머핀	NNP
+베이컨토마토머핀	NNP
+소시지 맥머핀	NNP
+소시지맥머핀	NNP
+소세지 맥머핀	NNP
+소세지맥머핀	NNP
+디럭스 브렉퍼스트	NNP
+디럭스브렉퍼스트	NNP
+디럭스 브랙퍼스트	NNP
+디럭스브랙퍼스트	NNP
+핫케익 3조각	NNP
+핫케익3조각	NNP
+핫케익 세 조각	NNP
+핫케익 세조각	NNP
+핫케익세조각	NNP
+핫케익 3개	NNP
+핫케익3개	NNP
+핫케익 세 개	NNP
+핫케익 세개	NNP
+핫케익세개	NNP
+핫케잌 3조각	NNP
+핫케잌3조각	NNP
+핫케잌 세 조각	NNP
+핫케잌 세조각	NNP
+핫케잌세조각	NNP
+핫케잌 3개	NNP
+핫케잌3개	NNP
+핫케익 2조각	NNP
+핫케익2조각	NNP
+핫케익 두 조각	NNP
+핫케익 두조각	NNP
+핫케익두조각	NNP
+핫케익 2개	NNP
+핫케익2개	NNP
+핫케잌 2조각	NNP
+핫케잌2조각	NNP
+핫케잌 두 조각	NNP
+핫케잌 두조각	NNP
+핫케잌두조각	NNP
+핫케잌 2개	NNP
+핫케잌2개	NNP
+핫케익	NNP
+핫케잌	NNP
+해쉬 브라운	NNP
+해쉬브라운	NNP
+해쉬	NNP
+
+# dessert
+맥너겟 4조각	NNP
+맥너겟 4개	NNP
+맥너겟4조각	NNP
+맥너겟4개	NNP
+맥너겟 네 개	NNP
+맥너겟 네개	NNP
+맥너겟네개	NNP
+맥너겟 네 조각	NNP
+맥너겟 네조각	NNP
+맥너겟네조각	NNP
+맥너겟 6조각	NNP
+맥너겟 6개	NNP
+맥너겟6조각	NNP
+맥너겟6개	NNP
+맥너겟 여섯 개	NNP
+맥너겟 여섯개	NNP
+맥너겟여섯개	NNP
+맥너겟 여섯 조각	NNP
+맥너겟 여섯조각	NNP
+맥너겟여섯조각	NNP
+맥너겟 10조각	NNP
+맥너겟 10개	NNP
+맥너겟10조각	NNP
+맥너겟10개	NNP
+맥너겟 열 개	NNP
+맥너겟 열개	NNP
+맥너겟열개	NNP
+맥너겟 열 조각	NNP
+맥너겟 열조각	NNP
+맥너겟열조각	NNP
+
+# icecreem
+바나나 오레오 맥플러리	NNP
+바나나오레오 맥플러리	NNP
+바나나오레오맥플러리	NNP
+바나나 오레오	NNP
+바나나오레오	NNP
+바나나 맥플러리	NNP
+바나나맥플러리	NNP
+딸기 오레오 맥플러리	NNP
+딸기오레오 맥플러리	NNP
+딸기오레오맥플러리	NNP
+딸기 오레오	NNP
+딸기오레오	NNP
+딸기 맥플러리	NNP
+딸기맥플러리	NNP
+초코 오레오 맥플러리	NNP
+초코오레오 맥플러리	NNP
+초코오레오맥플러리	NNP
+초코 오레오	NNP
+초코오레오	NNP
+초코 맥플러리	NNP
+초코맥플러리	NNP
+오레오 맥플러리	NNP
+오레오맥플러리	NNP
+아이스크림콘	NNP
+아이스크림 콘	NNP
+콘	NNP
+초코콘	NNP
+초코 콘	NNP
+초코 선데이 아이스크림	NNP
+초코선데이 아이스크림	NNP
+초코선데이아이스크림	NNP
+초코 선데이	NNP
+초코선데이	NNP
+카라멜 선데이 아이스크림	NNP
+카라멜선데이 아이스크림	NNP
+카라멜선데이아이스크림	NNP
+카라멜 선데이	NNP
+카라멜선데이	NNP
+딸기 선데이 아이스크림	NNP
+딸기선데이 아이스크림	NNP
+딸기선데이아이스크림	NNP
+딸기 선데이	NNP
+딸기선데이	NNP
+선데이	NNP
+오레오 아포가토	NNP
+아포가토	NNP
+
+# beverage
+코카-콜라	NNP
+코카콜라	NNP
 콜라	NNP
+사이다	NNP
+스프라이트	NNP
+환타	NNP
+코카-콜라 제로	NNP
+코카-콜라제로	NNP
+코카 콜라 제로	NNP
+코카콜라제로	NNP
+제로 코카-콜라	NNP
+제로 코카 콜라	NNP
+제로코카 콜라	NNP
+제로 코카콜라	NNP
+제로코카콜라	NNP
+제로콜라	NNP
+제로코크	NNP
+제로콕	NNP
+아이스 커피
 아이스커피	NNP
 뜨거운커피	NNP
 핫커피	NNP
+생수	NNP
+물	NNP
+우유	NNP
+밀크	NNP
+오렌지 주스	NNP
+오렌지주스	NNP
+오렌지 쥬스	NNP
+오렌지쥬스	NNP
+주스	NNP
+쥬스	NNP
+딸기 칠러	NNP
+딸기칠러	NNP
+배 칠러	NNP
+배칠러	NNP
+바닐라 쉐이크	NNP
+바닐라쉐이크	NNP
+바닐라셰이크	NNP
+딸기 쉐이크	NNP
+딸기쉐이크	NNP
+딸기셰이크	NNP
+초코 쉐이크	NNP
+초코쉐이크	NNP
+초코셰이크	NNP
+카페라떼	NNP
+까페라떼	NNP
+디카페인 카페라떼	NNP
+디카페인카페라떼	NNP
+디까페인 까페라떼	NNP
+디까페인까페라떼	NNP
+아이스 카페라떼	NNP
+아이스카페라떼	NNP
+아이스 까페라떼	NNP
+아이스까페라떼	NNP
+디카페인 아이스 카페라떼	NNP
+디카페인아이스 카페라떼	NNP
+디카페인아이스카페라떼	NNP
+디까페인 아이스 까페라떼	NNP
+디까페인아이스 까페라떼	NNP
+디까페인아이스까페라떼	NNP
+아메리카노	NNP
+디카페인 아메리카노	NNP
+디카페인아메리카노	NNP
+디까페인 아메리카노	NNP
+디까페인아메리카노	NNP
+아이스 아메리카노	NNP
+아이스아메리카노	NNP
+아아	NNP
+디카페인 아이스 아메리카노	NNP
+디카페인아이스 아메리카노	NNP
+디카페인아이스아메리카노	NNP
+디까페인 아이스 아메리카노	NNP
+디까페인아이스 아메리카노	NNP
+디까페인아이스아메리카노	NNP
+카푸치노	NNP
+디카페인 카푸치노	NNP
+디카페인카푸치노	NNP
+디까페인 카푸치노	NNP
+디까페인카푸치노	NNP
+에스프레소	NNP
+디카페인 에스프레소	NNP
+디카페인에스프레소	NNP
+디까페인 에스프레소	NNP
+디까페인에스프레소	NNP
+프리미엄 로스트 원두커피	NNP
+프리미엄로스트 원두커피	NNP
+프리미언로스트 원두커피	NNP
 
+# size
 미디움	NNP
 라지	NNP
+
+# menu_type
 세트	NNP
 단품	NNP
