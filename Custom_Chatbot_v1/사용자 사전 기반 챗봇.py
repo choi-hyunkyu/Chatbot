@@ -17,7 +17,8 @@ intent_dict = {
     
     'size': ['미디움', '라지'],
     
-    'menu_type' : ['세트', '단품']
+    'menu_type' : ['세트', '단품'],
+
 }
 
 '''
@@ -91,11 +92,53 @@ def chatting(input_sentence, intent_dict):
 
     return customer_dict
 
+def chat(intent_dict):
+    input_sentence = ""
+    while(1):
+        try:
+            '''
+            주문 접수 여부
+            '''
+            print("안녕하세요, 맥도날드입니다!")
+            input_sentence = input('주문하시겠습니까? > ')
+            if input_sentence == '아니오' or input_sentence == '아니':
+                print("감사합니다. 안녕히 가십시오.")
+                break
+
+            '''
+            주문 접수
+            '''
+            customer_intents, counts = extract_intent(input_sentence)
+            # dict2list with store
+            store_list = [intent for categories, menues in intent_dict.items() for intent in menues]
+            # CUSTOMER's order list
+            order = [value for value in store_list if value in customer_intents['CUSTOMER_ORDER']]
+            # Matching between CUSTOMER's order and menues in the store
+            customer_dict = matching_menu(order, intent_dict)
+            # Answer
+            print("요청하신 {}버거, {}, {}{} 주문이 완료되었습니다.".format(customer_dict['burger'], customer_dict['beverage'], customer_dict['size'], customer_dict['menu_type']))
+
+            '''
+            주문 종료
+            '''
+            input_sentence = input('주문을 이어서 하시겠습니까? > ')
+            if input_sentence == '아니오' or input_sentence == '아니':
+                print("주문이 완료되었습니다.")
+                break
+            elif input_sentence == '예' or input_sentence == '네': continue
+
+        except:
+            print("Error")
+
+    return customer_dict
+
 '''
 Result
 '''
-input_sentence = "안녕하세요, 상하이버거 미디움세트, 빅맥버거 라지세트에 음료수는 아이스커피, 콜라로 주세요."
-input_sentence = "상하이버거 라지세트하나에 빅맥단품으로 주세요. 아 그리고 상하이 버거에는 콜라로 주세요"
-input_sentence = "빅맥 단품 하나 주세요."
-input_sentence = "1955버거 단품 하나 주세요."
-chatting(input_sentence, intent_dict)
+input_sentence_1 = "안녕하세요, 상하이버거 미디움세트, 빅맥버거 라지세트에 음료수는 아이스커피, 콜라로 주세요."
+input_sentence_2 = "상하이버거 라지세트하나에 빅맥단품으로 주세요. 아 그리고 상하이 버거에는 콜라로 주세요"
+input_sentence_3 = "빅맥 단품 하나 주세요."
+input_sentence_4 = "1955버거 단품 하나 주세요."
+chatting(input_sentence_4, intent_dict)
+
+chat(intent_dict)
