@@ -2,6 +2,9 @@
 from PyKomoran import *
 from collections import Counter
 
+'''
+model setting
+'''
 komoran = Komoran(model_path = DEFAULT_MODEL['FULL'])
 komoran.set_user_dic('./data/dic/user.dic')
 
