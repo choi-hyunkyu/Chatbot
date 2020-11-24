@@ -43,8 +43,6 @@ data loading
 with open('./data/dic/menu_list/menu_list.json', 'r', encoding = 'utf-8') as file:
     intent_dict = json.load(file)
 
-intent_dict
-
 '''
 functions
 '''
