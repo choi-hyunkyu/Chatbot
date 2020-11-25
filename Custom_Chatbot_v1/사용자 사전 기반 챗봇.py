@@ -95,8 +95,8 @@ def extract_intent(input_sentence):
 def matching_menu(order, intent_dict):
     customer_dict = {}
     for index, items in enumerate(intent_dict.items()): # v: list
-        category, menues = items
-        menu = [value for value in menues if value in order]
+        category, menus = items
+        menu = [value for value in menus if value in order]
         customer_dict.update({category: menu})
 
     return customer_dict
@@ -143,10 +143,10 @@ def response(customer_dict):
 def chatting(input_sentence, intent_dict):
     customer_intents, counts = extract_intent(input_sentence)
     # dict2list with store
-    store_list = [intent for categories, menues in intent_dict.items() for intent in menues]
+    store_list = [intent for categories, menus in intent_dict.items() for intent in menus]
     # CUSTOMER's order list
     order = [value for value in store_list if value in customer_intents['CUSTOMER_ORDER']]
-    # Matching between CUSTOMER's order and menues in the store
+    # Matching between CUSTOMER's order and menus in the store
     customer_dict = matching_menu(order, intent_dict)
     # Answer
     #print("요청하신 {}, {}, {}{} 주문이 완료되었습니다.".format(customer_dict['burger'], customer_dict['beverage'], customer_dict['size'], customer_dict['menu_type']))
